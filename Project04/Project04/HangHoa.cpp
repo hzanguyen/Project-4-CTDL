@@ -1,13 +1,19 @@
 #include "HangHoa.h"
 
 HangHoa::HangHoa() {
-
+	strMaHang = "";
+	strTenHang = "";
+	strNoiSanXuat = "";
+	strMauSac = "";
+	iGiaBan = 0;
+	strNgayNhapKho = "";
+	iSoLuong = 0;
 }
 string HangHoa::getMaHang() {
 	return strMaHang;
 }
-void HangHoa::setTenHang(string strValue) {
-	strTenHang = strValue;
+void HangHoa::setMaHang(string strValue) {
+	strMaHang = strValue;
 }
 string HangHoa::getTenHang() {
 	return strTenHang;
@@ -19,7 +25,7 @@ string HangHoa::getNoiSanXuat() {
 	return strNoiSanXuat;
 }
 void HangHoa::setNoiSanXuat(string strValue) {
-	 strNoiSanXuat = strValue;
+	strNoiSanXuat = strValue;
 }
 string HangHoa::getMauSac() {
 	return strMauSac;
@@ -27,11 +33,11 @@ string HangHoa::getMauSac() {
 void HangHoa::setMauSac(string strValue) {
 	strMauSac = strValue;
 }
-double HangHoa::getGiaBan() {
-	return dGiaBan;
+int HangHoa::getGiaBan() {
+	return iGiaBan;
 }
-void HangHoa::setGiaBan(double dValue) {
-	dGiaBan = dValue;
+void HangHoa::setGiaBan(int iValue) {
+	iGiaBan = iValue;
 }
 string HangHoa::getNgayNhapKho() {
 	return strNgayNhapKho;
@@ -41,7 +47,17 @@ void HangHoa::setNgayNhapKho(string strValue) {
 }
 int HangHoa::getSoLuong() {
 	return iSoLuong;
-}
+};
 void HangHoa::setSoLuong(int iValue) {
 	iSoLuong = iValue;
+}
+ostream& operator << (ostream& os, HangHoa a) {
+	os << a.strMaHang << " | " << a.strTenHang << " | " << a.strNoiSanXuat << " | " << a.strMauSac << " | " << a.iGiaBan << " | " << a.strNgayNhapKho << " | " << a.iSoLuong;
+	return os;
+}
+istream& operator >>(istream& is, HangHoa& a) {
+	is >> a.strMaHang;
+	getline(is, a.strTenHang);
+	is >> a.strNoiSanXuat >> a.strMauSac >> a.iGiaBan >> a.strNgayNhapKho >> a.iSoLuong;
+	return is;
 }
