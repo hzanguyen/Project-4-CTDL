@@ -29,7 +29,8 @@ public:
 	void setNgayNhapKho(string strValue);
 	int getSoLuong();
 	void setSoLuong(int iValue);
-
+	friend istream& operator >>(istream& is, HangHoa& a);
+	friend ostream& operator <<(ostream& os, HangHoa a);
 };
 #endif // !1
 
