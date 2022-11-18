@@ -7,7 +7,7 @@
 using namespace std;
 
 class DanhSachHangHoa {
-	HangHoa hhDanhSanh;
+	HangHoa* hhDanhSanh;
 	int iSoLuong;
 };
 
