@@ -45,3 +45,9 @@ int HangHoa::getSoLuong() {
 void HangHoa::setSoLuong(int iValue) {
 	iSoLuong = iValue;
 }
+ostream& operator << (ostream& os, HangHoa a) {
+	os << a.strMaHang<<" | "<<a.strTenHang <<" | "<<a.strNoiSanXuat<<" | "<<a.strMauSac<<" | "<<a.dGiaBan<<" | "<<a.strNgayNhapKho<<" | "<<a.iSoLuong;
+}
+istream& operator >>(istream& is, HangHoa& a) {
+	is >> a.strMaHang >> a.strTenHang >> a.strNoiSanXuat >> a.strMauSac >> a.dGiaBan >> a.strNgayNhapKho >> a.iSoLuong;
+}
