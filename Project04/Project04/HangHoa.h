@@ -11,25 +11,27 @@ class HangHoa
 	string strTenHang;
 	string strNoiSanXuat;
 	string strMauSac;
-	double dGiaBan;
+	int iGiaBan;
 	string strNgayNhapKho;
 	int iSoLuong;
 public:
+	HangHoa();
 	string getMaHang();
-	void setTenHang(string strValue);
+	void setMaHang(string strValue);
 	string getTenHang();
 	void setTenHang(string strValue);
 	string getNoiSanXuat();
 	void setNoiSanXuat(string strValue);
 	string getMauSac();
 	void setMauSac(string strValue);
-	double getGiaBan();
-	void setGiaBan(double dValue);
+	int getGiaBan();
+	void setGiaBan(int iValue);
 	string getNgayNhapKho();
 	void setNgayNhapKho(string strValue);
 	int getSoLuong();
 	void setSoLuong(int iValue);
-
+	friend istream& operator >>(istream& is, HangHoa& a);
+	friend ostream& operator <<(ostream& os, HangHoa a);
 };
 #endif // !1
 
